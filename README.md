@@ -91,13 +91,16 @@ This section will describe what i'm doing during developing this project. I will
 ### Use case schema
 
 *User point of view*
-> register -> login
-> login -> view profile
-> login -> edit profile
-> login -> to up
-> login -> order -> choose order type -> choose destination -> choose payment type -> confirm -> receive driver -> arrived
-> login -> view order history
-> login -> logout
+* register -> login
+* login -> view profile
+* login -> edit profile
+* login -> to up
+* login -> order -> choose order type -> choose destination -> choose payment type -> confirm -> receive driver -> arrived
+* login -> view order history
+* login -> logout
+
+*Driver point of view*
+* register -> login
 
 ### DB schema
 
