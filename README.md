@@ -22,9 +22,9 @@
 ## Use-case that must be implemented
 
 1 User
-  ~~1.1 User can register~~
-  ~~1.2 User can login/logout~~
-  ~~1.3 User can see their own profile~~
+  1.1 User can register
+  1.2 User can login/logout
+  1.3 User can see their own profile    
     1.3.1 User can see their go-pay balance
     1.3.2 User can top-up their go-pay
   1.4 User can edit their own profile
@@ -34,9 +34,9 @@
   1.8 User can see order history
 
 2 Driver
-  ~~2.1 Driver can register~~
-  ~~2.2 Driver can login/logout~~
-  ~~2.3 Driver can see their own profile~~
+  2.1 Driver can register
+  2.2 Driver can login/logout
+  2.3 Driver can see their own profile
     2.3.1 Driver can see their go-pay balance
   2.4 Driver can set their current location (to simulate GPS)
   2.5 Driver can bid for job
@@ -63,10 +63,10 @@ This section will describe what i'm doing during developing this project. I will
 ### Services schema
 
 1 Application Service :
-..User database
-..Model to interact with user database
-..Driver database
-..Model to interact with admin database
+..-User database
+..-Model to interact with user database
+..-Driver database
+..-Model to interact with admin database
 
 ### Service handler
 
