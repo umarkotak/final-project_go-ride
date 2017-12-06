@@ -64,10 +64,10 @@ This section will describe what i'm doing during developing this project. I will
 ### Services schema
 
 1 Application Service :
-  -User database
-  -Model to interact with user database
-  -Driver database
-  -Model to interact with admin database
+  - User database
+  - Model to interact with user database
+  - Driver database
+  - Model to interact with admin database
 
 ### Service handler
 
