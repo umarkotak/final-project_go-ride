@@ -87,39 +87,46 @@ This section will describe what i'm doing during developing this project. I will
 | Order Service       | user create order       |
 
 ### DB schema
-
-*Users table*
-```
-  id
-  username
-  password
-  full_name
-  email
-  phone
-  address
-  credit
-```
-
-*Drivers table*
-```
-  id
-  username
-  password
-  full_name
-  email
-  phone
-  address
-  type
-  credit
-```
-
-*DriverLocations table*
-```
-  id
-  drivers_id
-  lat
-  lng
-```
+<table>
+  <tr>
+    <td>
+      *Users table*
+      ```
+        id
+        username
+        password
+        full_name
+        email
+        phone
+        address
+        credit
+      ```
+    </td>
+    <td>
+      *Drivers table*
+      ```
+        id
+        username
+        password
+        full_name
+        email
+        phone
+        address
+        type
+        credit
+      ```
+    </td>
+    <td>
+      *DriverLocations table*
+      ```
+        id
+        drivers_id
+        lat
+        lng
+      ```
+    </td>
+  </tr>
+</table>>
 
 ### External usefull links
 
