@@ -99,6 +99,21 @@ This section will describe what i'm doing during developing this project. I will
 - login -> order -> choose order type -> choose destination -> choose payment type -> confirm -> receive driver -> arrived
 - login -> view order history
 - login -> logout
+
+Description :
+
+1. Order
+User login
+click order
+input origin, destination, service type
+click next
+show order validation, origin destination exist?
+input payment type
+click confirm
+show order confirm validation, credit sufficient?
+looking for driver
+got driver
+complete order
 ```
 
 *Driver point of view*
@@ -108,7 +123,7 @@ This section will describe what i'm doing during developing this project. I will
 
 ### DB schema
 
-*Users table*
+*Users*
 ```
   id
   username
@@ -120,7 +135,7 @@ This section will describe what i'm doing during developing this project. I will
   credit
 ```
 
-*Drivers table*
+*Drivers*
 ```
   id
   username
@@ -133,12 +148,25 @@ This section will describe what i'm doing during developing this project. I will
   credit
 ```
 
-*DriverLocations table*
+*DriverLocations*
 ```
   id
-  drivers_id
+  driver_id
   lat
   lng
+```
+
+*Orders*
+```
+  id
+  user_id
+  driver_id
+  origin
+  destination
+  distance
+  service_type
+  payment_type
+  price
 ```
 
 ### External usefull links
