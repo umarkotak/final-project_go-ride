@@ -22,22 +22,22 @@
 ## Use-case that must be implemented
 ```
 1 User
-  1.1 User can register
-  1.2 User can login/logout
-  1.3 User can see their own profile
-    1.3.1 User can see their go-pay balance
-    1.3.2 User can top-up their go-pay
-  1.4 User can edit their own profile
+  o 1.1 User can register
+  o 1.2 User can login/logout
+  o 1.3 User can see their own profile
+    o 1.3.1 User can see their go-pay balance
+    o 1.3.2 User can top-up their go-pay
+  o 1.4 User can edit their own profile
   1.5 User can order go-ride
   1.6 User can order go-car
   1.7 User can pick payment type during confirmation (cash or go-pay)
   1.8 User can see order history
 
 2 Driver
-  2.1 Driver can register
-  2.2 Driver can login/logout
-  2.3 Driver can see their own profile
-    2.3.1 Driver can see their go-pay balance
+  o 2.1 Driver can register
+  o 2.2 Driver can login/logout
+  o 2.3 Driver can see their own profile
+    o 2.3.1 Driver can see their go-pay balance
   2.4 Driver can set their current location (to simulate GPS)
   2.5 Driver can bid for job
   2.6 Driver can see job history
@@ -84,3 +84,38 @@ This section will describe what i'm doing during developing this project. I will
 |                     | user Login/ Logout      |
 |                     | driver CRUD             |
 |                     | driver Login/ Logout    |
+
+### DB schema
+
+*Users table*
+```
+  id
+  username
+  password
+  full_name
+  email
+  phone
+  address
+  credit
+```
+
+*Drivers table*
+```
+  id
+  username
+  password
+  full_name
+  email
+  phone
+  address
+  type
+  credit
+```
+
+*DriverLocations table*
+```
+  id
+  drivers_id
+  lat
+  lng
+```
