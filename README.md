@@ -63,8 +63,9 @@
 This section will describe what i'm doing during developing this project. I will put the spesification and the major schema here.
 
 ### Timelines
-
+```
 1 
+```
 
 ### Services schema
 ```
