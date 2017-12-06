@@ -22,7 +22,7 @@
 ## Use-case that must be implemented
 ```
 1 User
-  1.1 User can register
+  1.1 ~~User can register~~
   1.2 User can login/logout
   1.3 User can see their own profile
     1.3.1 User can see their go-pay balance
