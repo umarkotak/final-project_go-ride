@@ -22,7 +22,7 @@
 ## Use-case that must be implemented
 ```
 1 User
-  1.1 ~~User can register~~
+  1.1 User can register
   1.2 User can login/logout
   1.3 User can see their own profile
     1.3.1 User can see their go-pay balance
@@ -64,10 +64,10 @@ This section will describe what i'm doing during developing this project. I will
 ### Services schema
 
 1 Application Service :
-..-User database
-..-Model to interact with user database
-..-Driver database
-..-Model to interact with admin database
+  -User database
+  -Model to interact with user database
+  -Driver database
+  -Model to interact with admin database
 
 ### Service handler
 
