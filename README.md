@@ -79,11 +79,12 @@ This section will describe what i'm doing during developing this project. I will
 ### Service handler
 
 | Service Name        | Use-case                |
-| ------------------- |:-----------------------:|
+| ------------------- |-------------------------|
 | Application Service | user CRUD               |
 |                     | user Login/ Logout      |
 |                     | driver CRUD             |
 |                     | driver Login/ Logout    |
+| Order Service       | user create order       |
 
 ### DB schema
 
@@ -119,3 +120,7 @@ This section will describe what i'm doing during developing this project. I will
   lat
   lng
 ```
+
+### External usefull links
+
+[Google map API for location lat lng](https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
