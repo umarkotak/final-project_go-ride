@@ -88,6 +88,17 @@ This section will describe what i'm doing during developing this project. I will
 | Order Service       | accept order request    |
 |                     | alocate nearest driver  |
 
+### Use case schema
+
+*User point of view*
+> register -> login
+> login -> view profile
+> login -> edit profile
+> login -> to up
+> login -> order -> choose order type -> choose destination -> choose payment type -> confirm -> receive driver -> arrived
+> login -> view order history
+> login -> logout
+
 ### DB schema
 
 *Users table*
