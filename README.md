@@ -44,12 +44,13 @@
 ```
 
 ## Note
-
+```
 - You are only allowed to ask questions related to the rules, bonus & use-case of this final project.
 - Implement & store coordinate for real-world location using google map API or similar services.
 - For use-case 2.5, there are two possible approaches that you can take:
   1. Pick the driver automatically based on their current location. Implement an algorithm that distribute the order evenly between drivers (don't let one driver get all the job).
   2. When someone orders go-ride or go-car, notify drivers who are currently located on said location. Driver who accept the order first will get the job. Implementation of the notification system is left to you. (BONUS)
+```
 
 ---
 
@@ -62,12 +63,13 @@ This section will describe what i'm doing during developing this project. I will
 1 
 
 ### Services schema
-
+```
 1 Application Service :
   - User database
   - Model to interact with user database
   - Driver database
   - Model to interact with admin database
+```
 
 ### Service handler
 
