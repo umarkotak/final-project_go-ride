@@ -38,7 +38,7 @@
   * 2.2 Driver can login/logout
   * 2.3 Driver can see their own profile
     * 2.3.1 Driver can see their go-pay balance
-  2.4 Driver can set their current location (to simulate GPS)
+  * 2.4 Driver can set their current location (to simulate GPS)
   2.5 Driver can bid for job
   2.6 Driver can see job history
 ```
@@ -64,7 +64,13 @@ This section will describe what i'm doing during developing this project. I will
 
 ### Timelines
 ```
-1 
+1 creating rail apps
+2 designing db schema
+3 making unit test for user and driver
+4 scaffolding user and driver
+5 creating login page for user and driver
+6 creating authorization access
+7 creating order
 ```
 
 ### Services schema
@@ -123,6 +129,8 @@ complete order
 
 ### DB schema
 
+ DB version : PostgreSQL 9.6
+
 *Users*
 ```
   id
@@ -154,6 +162,7 @@ complete order
   driver_id
   lat
   lng
+  status [offline, online, busy]
 ```
 
 *Orders*
@@ -167,8 +176,43 @@ complete order
   service_type
   payment_type
   price
+  status  [complete, canceled, on_progress]
+```
+
+```
+HOW TO SETUP POSTGRES ON RAILS
+
+sudo apt-get install libpq-dev
+gem install pg
+install pgadmin untuk GUI
+
+gem 'pg'
+
+database.yml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: umarkotak
+
+development:
+  <<: *default
+  database: goride
+
+test:
+  <<: *default
+  database: goride
+
 ```
 
 ### External usefull links
 
+[For requesting API](https://github.com/c42/wrest)
+
+[For HTTP request](https://github.com/httprb/http)
+
 [Google map API for location lat lng](https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
+
+[Google map Distance API with lat lng](https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.714224,-73.961452&destinations=40.714224,-73.961455&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
