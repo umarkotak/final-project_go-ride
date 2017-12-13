@@ -28,10 +28,10 @@
     * 1.3.1 User can see their go-pay balance
     * 1.3.2 User can top-up their go-pay
   * 1.4 User can edit their own profile
-  1.5 User can order go-ride
-  1.6 User can order go-car
+  * 1.5 User can order go-ride
+  * 1.6 User can order go-car
   1.7 User can pick payment type during confirmation (cash or go-pay)
-  1.8 User can see order history
+  * 1.8 User can see order history
 
 2 Driver
   * 2.1 Driver can register
@@ -39,8 +39,8 @@
   * 2.3 Driver can see their own profile
     * 2.3.1 Driver can see their go-pay balance
   * 2.4 Driver can set their current location (to simulate GPS)
-  2.5 Driver can bid for job
-  2.6 Driver can see job history
+  * 2.5 Driver can bid for job
+  * 2.6 Driver can see job history
 ```
 
 ## Note
@@ -160,9 +160,11 @@ complete order
 ```
   id
   driver_id
+  location
   lat
   lng
   status [offline, online, busy]
+  order_id
 ```
 
 *Orders*
@@ -178,6 +180,24 @@ complete order
   price
   status  [complete, canceled, on_progress]
 ```
+
+### External usefull links
+
+[For requesting API](https://github.com/c42/wrest)
+
+[For HTTP request](https://github.com/httprb/http)
+
+[Google map API for location lat lng](https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
+
+[Google map Distance API with lat lng](https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.714224,-73.961452&destinations=40.714224,-73.961455&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
+
+---
+
+## Notes
+
+Somethings that maybe important..
+
+### Setting up postgres
 
 ```
 HOW TO SETUP POSTGRES ON RAILS
@@ -204,15 +224,22 @@ development:
 test:
   <<: *default
   database: goride
-
 ```
 
-### External usefull links
+### Setting Up Apache Kafka
 
-[For requesting API](https://github.com/c42/wrest)
+[Installation guide](https://devops.profitbricks.com/tutorials/install-and-configure-apache-kafka-on-ubuntu-1604-1/)
+[Example files](https://devops.profitbricks.com/tutorials/install-and-configure-apache-kafka-on-ubuntu-1604-1/)
+[Apache kafka files](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.0.0/kafka_2.11-1.0.0.tgz)
 
-[For HTTP request](https://github.com/httprb/http)
-
-[Google map API for location lat lng](https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
-
-[Google map Distance API with lat lng](https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.714224,-73.961452&destinations=40.714224,-73.961455&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
+1. Install java
+2. Install zookeeper
+3. Install apache kafka
+   - download the file
+   - sudo tar -xvf kafka_versions.tgz -C /usr/local/kafka/
+   - start kafka
+   - sudo /usr/local/kafka/kafka_versions/bin/kafka-server-start.sh /usr/local/kafka/kafka_versions/config/server.properties
+4. gem install ruby-kafka
+5. git clone https://github.com/rodolfobandeira/ruby-kafka.git
+6. open the producer.rb and consumer.rb
+7. sudo nohup /usr/local/kafka/kafka_2.11-1.0.0/bin/kafka-server-start.sh /usr/local/kafka/kafka_2.11-1.0.0/config/server.properties
