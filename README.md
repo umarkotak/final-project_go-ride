@@ -64,13 +64,17 @@ This section will describe what i'm doing during developing this project. I will
 
 ### Timelines
 ```
-1 creating rail apps
-2 designing db schema
-3 making unit test for user and driver
-4 scaffolding user and driver
-5 creating login page for user and driver
-6 creating authorization access
-7 creating order
+1  creating rail apps
+2  designing db schema
+3  making unit test for user and driver
+4  scaffolding user and driver
+5  creating login page for user and driver
+6  creating authorization access
+7  creating order
+8  all transaction process done
+9  user cannot cancel
+10 calculate nearby driver not implemented
+11 working on microservices design
 ```
 
 ### Services schema
@@ -229,17 +233,35 @@ test:
 ### Setting Up Apache Kafka
 
 [Installation guide](https://devops.profitbricks.com/tutorials/install-and-configure-apache-kafka-on-ubuntu-1604-1/)
+
 [Example files](https://devops.profitbricks.com/tutorials/install-and-configure-apache-kafka-on-ubuntu-1604-1/)
+
 [Apache kafka files](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.0.0/kafka_2.11-1.0.0.tgz)
 
+```
 1. Install java
 2. Install zookeeper
 3. Install apache kafka
    - download the file
    - sudo tar -xvf kafka_versions.tgz -C /usr/local/kafka/
    - start kafka
-   - sudo /usr/local/kafka/kafka_versions/bin/kafka-server-start.sh /usr/local/kafka/kafka_versions/config/server.properties
+   - sudo /usr/local/kafka/kafka_2.11-1.0.0/bin/kafka-server-start.sh /usr/local/kafka/kafka_2.11-1.0.0/config/server.properties
 4. gem install ruby-kafka
 5. git clone https://github.com/rodolfobandeira/ruby-kafka.git
 6. open the producer.rb and consumer.rb
 7. sudo nohup /usr/local/kafka/kafka_2.11-1.0.0/bin/kafka-server-start.sh /usr/local/kafka/kafka_2.11-1.0.0/config/server.properties
+8. start consumer app
+9. execute producer, consumer will take what producer give
+```
+
+### Setting Up racecar
+
+[racecar](https://github.com/zendesk/racecar)
+
+```
+1. gem 'racecar'
+2. bundle install
+3. bundle exec rails generate racecar:install
+4. rails generate racecar:consumer TapDance
+5. bundle exec racecar --require dance_moves TapDanceConsumer
+```
