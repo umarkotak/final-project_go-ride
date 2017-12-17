@@ -30,7 +30,7 @@
   * 1.4 User can edit their own profile
   * 1.5 User can order go-ride
   * 1.6 User can order go-car
-  1.7 User can pick payment type during confirmation (cash or go-pay)
+  * 1.7 User can pick payment type during confirmation (cash or go-pay)
   * 1.8 User can see order history
 
 2 Driver
@@ -75,60 +75,61 @@ This section will describe what i'm doing during developing this project. I will
 9  user cannot cancel
 10 calculate nearby driver not implemented
 11 working on microservices design
+12 create algorithm to select driver near to order origin
+13 create other rails app prepare to move allocation service
+   - api get index
+   - consumer to set driver_location
+   - consumer to unset driver_location
+   - consumer to set order_id when request comes
+   - consumer to produce driver_id
+14 create consumer on application
+   - consumer can receive driver_id from allocation
+   - when complete,
+   - produce to change allocation status to online
+15 refactoring everything
+
 ```
 
-### Services schema
+### Version Spesification
+
+*Monolitic V1*
 ```
-1 Application Service :
-  - User database
-  - Model to interact with user database
-  - Driver database
-  - Model to interact with admin database
-```
-
-### Service handler
-
-| Service Name        | Use-case                |
-| ------------------- |-------------------------|
-| Application Service | user CRUD               |
-|                     | user Login/ Logout      |
-|                     | driver CRUD             |
-|                     | driver Login/ Logout    |
-|                     | user create order       |
-| Order Service       | accept order request    |
-|                     | alocate nearest driver  |
-
-### Use case schema
-
-*User point of view*
-```
-- register -> login
-- login -> view profile
-- login -> edit profile
-- login -> to up
-- login -> order -> choose order type -> choose destination -> choose payment type -> confirm -> receive driver -> arrived
-- login -> view order history
-- login -> logout
-
-Description :
-
-1. Order
-User login
-click order
-input origin, destination, service type
-click next
-show order validation, origin destination exist?
-input payment type
-click confirm
-show order confirm validation, credit sufficient?
-looking for driver
-got driver
-complete order
+unstable version
+order confirm form using post method
+driver given during confirmation
+rando driver will be given
+driver can see their job if order exist
+no gopay method implemented
 ```
 
-*Driver point of view*
+*Monolitic V2*
 ```
-- register -> login
+implementing gopay method for payment
+order confirm form using get method
+driver given during confirmation
+lat lng available order confirm
+```
+
+*Monolitic V3*
+```
+refactoring test that is necessary
+refactoring model and controller
+```
+
+*Monolitic V4*
+```
+unstable
+full features monolitic application
+completed all use case in monolitic manners
+async driver allocation
+user can wait for their driver until arived
+```
+
+*Monolitic V5*
+```
+stable version monolitic
+full features on use case
+using async when allocating driver
 ```
 
 ### DB schema
@@ -164,6 +165,7 @@ complete order
 ```
   id
   driver_id
+  service_type
   location
   lat
   lng
@@ -185,6 +187,13 @@ complete order
   status  [complete, canceled, on_progress]
 ```
 
+
+---
+
+## Notes
+
+Somethings that maybe important..
+
 ### External usefull links
 
 [For requesting API](https://github.com/c42/wrest)
@@ -194,12 +203,6 @@ complete order
 [Google map API for location lat lng](https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
 
 [Google map Distance API with lat lng](https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.714224,-73.961452&destinations=40.714224,-73.961455&key=AIzaSyD9eO9WPUr-KKTqUM8Q3uzHcZpThY4NIDM)
-
----
-
-## Notes
-
-Somethings that maybe important..
 
 ### Setting up postgres
 
@@ -264,4 +267,18 @@ test:
 3. bundle exec rails generate racecar:install
 4. rails generate racecar:consumer TapDance
 5. bundle exec racecar --require dance_moves TapDanceConsumer
+6. racecar ConsumerTestConsumer -> to start consumer
+```
+
+### Usefull command
+
+```
+1. puma -C config/puma.rb -d -p 3001 -> to start rails s in back ground
+2. kill -s 9 id -> kill service by id
+```
+
+### Junkyard
+
+```
+
 ```
