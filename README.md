@@ -62,6 +62,13 @@
 
 This section will describe what i'm doing during developing this project. I will put the spesification and the major schema here.
 
+### Installation Guide
+
+- create database goride
+- rails db:migrate
+- create database allocation
+- rails db:migrate
+
 ### Timelines
 ```
 1  creating rail apps
@@ -130,6 +137,13 @@ user can wait for their driver until arived
 stable version monolitic
 full features on use case
 using async when allocating driver
+```
+
+*Microservices V05*
+```
+stable async comunication between
+application <--> allocation
+allocating driver asyncly
 ```
 
 ### DB schema
