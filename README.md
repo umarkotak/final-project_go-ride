@@ -116,7 +116,10 @@ This section will describe what i'm doing during developing this project. I will
 ```
 User login & Sign Up
 Driver login & Sign Up
-User create order
+Driver set location -> jakarta
+User create order -> jakarta -> kemang
+Driver got order
+Driver complete / cancel
 ```
 *Allocation Service*
 ```
