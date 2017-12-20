@@ -64,10 +64,21 @@ This section will describe what i'm doing during developing this project. I will
 
 ### Installation Guide
 
+- clone every app inside go-ride repo
+- bundle install
+- instal postgres sql
 - create database goride
 - rails db:migrate
 - create database allocation
 - rails db:migrate
+- install apache kafka
+- start apache kafka
+- start application
+- start racecar
+- register as user if you are user
+- login user and create order
+- register as driver if you are driver
+- login driver and do job
 
 ### Timelines
 ```
@@ -94,7 +105,24 @@ This section will describe what i'm doing during developing this project. I will
    - when complete,
    - produce to change allocation status to online
 15 refactoring everything
+16 creating view with bootstrap
+17 refactoring code
+18 refactoring unit test
+19 add new feature, driver will move after complete order
+```
 
+### Application Presentation
+*Application Service*
+```
+User login & Sign Up
+Driver login & Sign Up
+User create order
+```
+*Allocation Service*
+```
+```
+*Routes Cache Service*
+```
 ```
 
 ### Version Spesification
