@@ -116,16 +116,28 @@ This section will describe what i'm doing during developing this project. I will
 ```
 User login & Sign Up
 Driver login & Sign Up
-Driver set location -> jakarta
-User create order -> jakarta -> kemang
+Driver set location
+User create order
 Driver got order
 Driver complete / cancel
+
+Scenario :
+user order with cash
+user order with gopay
+user order without driver
+driver accept order
+driver cancel order
 ```
 *Allocation Service*
 ```
+receive a driver request
+search nearby driver to pick up point
+giving driver randomly 
 ```
 *Routes Cache Service*
 ```
+save a new added routes
+provide an api with recent routes data
 ```
 
 ### Version Spesification
