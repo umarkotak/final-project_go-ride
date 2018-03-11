@@ -339,3 +339,44 @@ test:
 ```
 
 ```
+
+### How To Start
+1. Start apache kafka
+```
+sudo /usr/local/kafka/kafka_2.11-1.0.0/bin/kafka-server-start.sh /usr/local/kafka/kafka_2.11-1.0.0/config/server.properties
+```
+
+2. Start application service
+```
+cd ~/goscholar/go-ride/application_service
+puma -C config/puma.rb -d -p 3000
+racecar ApplicationConsumer
+```
+
+3. Start allocation service
+```
+cd ~/goscholar/go-ride/allocation_service
+puma -C config/puma.rb -d -p 3001
+racecar AllocationConsumer
+```
+
+4. Start routes cache services
+```
+cd ~/goscholar/go-ride/routes_cache_service
+./routes_cache_service
+```
+
+5. Userlist
+```
+useradmin; useradmin
+```
+
+6. Driverlist
+```
+driveradmin; driveradmin
+```
+
+7. To stop all
+```
+ps aux | grep puma
+```
